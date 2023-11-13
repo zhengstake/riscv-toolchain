@@ -1,0 +1,6 @@
+[submodule "riscv-gnu-toolchain"]
+	path = riscv-gnu-toolchain
+	url = https://github.com/riscv/riscv-gnu-toolchain
+[submodule "riscv-llvm"]
+	path = riscv-llvm
+	url = https://github.com/llvm/llvm-project.git
