@@ -4,3 +4,9 @@
 [submodule "riscv-llvm"]
 	path = riscv-llvm
 	url = https://github.com/llvm/llvm-project.git
+[submodule "riscv-pk"]
+	path = riscv-pk
+	url = https://github.com/riscv/riscv-pk
+[submodule "riscv-isa-sim"]
+	path = riscv-isa-sim
+	url = https://github.com/riscv/riscv-isa-sim
