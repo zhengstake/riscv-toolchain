@@ -49,6 +49,7 @@ popd
 
 ## spike
 ```bash
+./configure --prefix=$RISCV
 make -j`nproc` build-sim
 ```
 
