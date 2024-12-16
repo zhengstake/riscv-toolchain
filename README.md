@@ -15,7 +15,13 @@ Overall there are four main steps:
 3. Build and install RISC-V Proxy Kernel and Boot Loader
 4. Build and install RISC-V spike ISS simulator
 
-We will start with the root toolchain directory riscv-toolchain.
+We will start with the root toolchain directory riscv-toolchain. 
+
+NOTE: if you don't have sudo permission to your system or prefer to create a clean environment for RISCV related work, you can use the Dockerfile included:
+```bash
+docker build -t riscv-toolchain:latest .
+docker run -it riscv-toolchain:latest /bin/bash
+```
 
 ```bash
 mkdir -p riscv-toolchain
@@ -31,6 +37,7 @@ hash -r
 ## install standard packages
 ```bash
 $ sudo apt-get install autoconf automake autotools-dev curl python3 python3-pip libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake libglib2.0-dev libslirp-dev
+pip install tomi
 ```
 
 ## gcc, binutils, newlib
@@ -60,6 +67,7 @@ sudo apt install qemu-user
 
 # Step 2: Build LLVM with bootstrapped riscv-gnu-toolchain
 ```bash
+sudo apt install clang clang-tools lld
 git clone --recursive https://github.com/llvm/llvm-project.git riscv-llvm
 pushd riscv-llvm
 ln -s ../../clang llvm/tools || true

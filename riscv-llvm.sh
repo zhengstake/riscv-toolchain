@@ -105,7 +105,7 @@ llc -filetype=obj hello.bc -o hello.riscvrel
 riscv64-unknown-elf-g++ hello.riscvrel -o hello -march=rv32imac -mabi=ilp32
 qemu-riscv32 hello
 
-#64-bit
+#64-bit 
 ${RISCV}/bin/clang++ --target=riscv64 hello.cpp -c -emit-llvm -o hello.bc --sysroot=${RISCV}/riscv64-unknown-elf/ --gcc-toolchain=${RISCV} -march=rv64gc -mabi=lp64d
 ${RISCV}/bin/llc -filetype=obj hello.bc -o hello.riscvrel
 ${RISCV}/bin/riscv64-unknown-elf-g++ hello.riscvrel -o hello.riscvexec
